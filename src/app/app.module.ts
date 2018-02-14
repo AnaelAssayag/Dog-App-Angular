@@ -10,12 +10,14 @@ import { CatService } from './cat.service';
 
 import { AppComponent } from './app.component';
 import { DogsComponent } from './dogs/dogs.component';
+import { DogEditorComponent } from './dog-editor/dog-editor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DogsComponent,
+    DogEditorComponent,
   ],
   imports: [
     BrowserModule,

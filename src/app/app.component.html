@@ -1,57 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="mymainclass">
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <div>
-        <form action="action_page.php">
-            <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-          
-              <button type="submit">Login</button>
-            </div>
-          </form>
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{ title }}!
+      </h1>
+      <div>
+          <form action="action_page.php">
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <button type="submit">Login</button>
+              </div>
+            </form>
+      </div>
+      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
     </div>
-    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    <app-dogs></app-dogs>
+
+
+    <!-- <ul>
+        <li *ngFor="let cat of cats;  let i = index">
+          <span>{{i +1}}) {{cat.name | uppercase}} - {{cat.weight}}kgs - {{cat.birthdate | date:format(cat)}}      
+          </span>
+        </li>
+      </ul> -->
   </div>
-  <h3>Add a new dog </h3>
-
-  <div>
-    <label for="dgN">Dog Name
-        <!-- <on-changes [dogName]="dogName" type="text" [(ngModel)]="dogName"> -->
-         <input type="text" [(ngModel)]="dogName" class="form-control" placeholder="name">
-        <!-- </on-changes>  -->
-    </label>
-    <label for="dgW">Dog Weight
-      <input type="text" [(ngModel)]="dogWeight" class="form-control" placeholder="weight">
-    </label>
-    <label for="dgB">Dog birthdate
-      <input type="date" [(ngModel)]="dogBirthdate" class="form-control" placeholder="dogBirthdate">
-    </label>
-    <input type="button" name="btnAddDog" (click)="addDog()" value="Add dog" />
-
-
-
-  </div>
-  <span *ngIf="dogWeight < 10" [ngClass]="{'warning' : dogWeight < 5, 'message': true }">{{dogName}} is underweight</span>
-
-  <ul>
-    <li *ngFor="let dog of dogs;  let i = index">
-      <span>{{i +1}}) {{dog.name | uppercase}} - {{dog.weight}}kgs - {{dog.birthdate | date:format(dog)}}
-        <button (click)="toggleFormat(dog)">{{dog.formatDisplay ? "-":"+"}}</button>
-        <button (click)="deleteDog(i)">Delete</button>
-      </span>
-    </li>
-  </ul>
-
-  <ul>
-      <li *ngFor="let cat of cats;  let i = index">
-        <span>{{i +1}}) {{cat.name | uppercase}} - {{cat.weight}}kgs - {{cat.birthdate | date:format(cat)}}      
-        </span>
-      </li>
-    </ul>
-</div>

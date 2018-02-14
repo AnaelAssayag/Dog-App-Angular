@@ -1,3 +1,15 @@
-<p>
-  dogs works!
-</p>
+<app-dog-editor [dog]="selectedDog"></app-dog-editor>
+
+  <h3>{{title}}</h3>
+    <ul>
+        <li *ngFor="let dog of dogs;  let i = index">
+          <!-- <span>{{i +1}}) {{dog.name | uppercase}} - {{dog.weight}}kgs - {{dog.birthdate | date:format(dog)}} -->
+         <span>{{i +1}}) {{dog.name | uppercase}} - {{dog.weight}}kgs - {{dog.birthDate}}
+
+            <button (click)="toggleFormat(dog)">{{dog.formatDisplay ? "-":"+"}}</button>
+            <button (click)="editDog(dog)">Edit</button>
+            <button (click)="deleteDog(i)">Delete</button>
+
+          </span>
+        </li>
+      </ul>
