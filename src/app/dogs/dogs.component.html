@@ -1,13 +1,19 @@
-<app-dog-editor [dog]="selectedDog"></app-dog-editor>
+  <!-- <app-dog-editor (dogAdded)="addLastUpdated($event)" (dogUpdated)="addJustUpdated($event)" [dog]="selectedDog"></app-dog-editor> -->
+
 
   <h3>{{title}}</h3>
-    <ul>
+  <h4 *ngIf="lastUpdated.length > 0">{{ lastUpdated }}</h4>
+
+    <ul class="dogD">
         <li *ngFor="let dog of dogs;  let i = index">
           <!-- <span>{{i +1}}) {{dog.name | uppercase}} - {{dog.weight}}kgs - {{dog.birthdate | date:format(dog)}} -->
          <span>{{i +1}}) {{dog.name | uppercase}} - {{dog.weight}}kgs - {{dog.birthDate}}
 
             <button (click)="toggleFormat(dog)">{{dog.formatDisplay ? "-":"+"}}</button>
-            <button (click)="editDog(dog)">Edit</button>
+            <!-- <button (click)="editDog(dog)">Edit</button> -->
+            <nav>
+                <a [routerLink]="['edit-dog', dog.id]">Edit</a>
+            </nav>
             <button (click)="deleteDog(i)">Delete</button>
 
           </span>

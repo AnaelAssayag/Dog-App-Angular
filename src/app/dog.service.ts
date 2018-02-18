@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Dog } from './dog';
+import { Route } from '@angular/compiler/src/core';
 
 
 const DOGS: Dog[] = [
@@ -15,12 +16,21 @@ const DOGS: Dog[] = [
 export class DogService {
   dogs: Dog[] = DOGS;
   selectedDog: Dog;
+  ActivatedRoute: Route
 
   constructor() { }
 
   getDogs(){
   return this.dogs
 }
+  getDog(id: Number):Dog{
+  let updateDogIndex = this.dogs.findIndex((dog) => dog.id == id);
+     return  this.dogs[updateDogIndex]
+  }
+  getDogName(name){
+
+  }
+
   addDog(newDog: Dog){
   	newDog.id = this.generateId();
   	this.dogs.push(newDog);
@@ -35,5 +45,6 @@ export class DogService {
     this.dogs[updateDogIndex] = dog;
   }
 
+
+
 }
-console.log(this.selectedDog)

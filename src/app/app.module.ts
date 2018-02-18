@@ -11,6 +11,8 @@ import { CatService } from './cat.service';
 import { AppComponent } from './app.component';
 import { DogsComponent } from './dogs/dogs.component';
 import { DogEditorComponent } from './dog-editor/dog-editor.component';
+import { AboutComponent } from './about/about.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { DogEditorComponent } from './dog-editor/dog-editor.component';
     AppComponent,
     DogsComponent,
     DogEditorComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
 
   ],
   providers: [DogService,
